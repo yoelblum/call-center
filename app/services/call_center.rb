@@ -5,7 +5,7 @@ class CallCenter
   # 'manager' escalation is handled by a free manager (if no free manager it waits to the next poll)
   # 'director'escalation is handled by a free director (likewise)
   def self.handle_call
-      Call.waiting.each do |call|
+      Call.waiting.order("id desc").each do |call|
         if call.escalation.nil?
           free_respondent = Respondent.free.first
           if free_respondent.present?

@@ -17,15 +17,16 @@ ActiveRecord::Schema.define(version: 20180511134309) do
 
   create_table "calls", force: :cascade do |t|
     t.integer "employee_id"
-    t.integer "status"
+    t.integer "status",      default: 0
     t.integer "escalation"
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string  "type"
-    t.string  "name"
-    t.integer "manager_id"
-    t.integer "status"
+    t.string   "type"
+    t.string   "name"
+    t.integer  "manager_id"
+    t.integer  "status",      default: 0
+    t.datetime "last_active"
   end
 
 end

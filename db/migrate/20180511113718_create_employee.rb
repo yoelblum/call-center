@@ -5,6 +5,7 @@ class CreateEmployee < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :manager_id
       t.integer :status, default: 0
+      t.datetime :last_active
     end
   end
 end
