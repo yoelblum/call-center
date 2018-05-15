@@ -1,1 +1,1 @@
-CallCenter.poll_calls if Rails.env.production?
+CallCenter.poll_calls if !Rails.env.test?

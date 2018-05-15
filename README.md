@@ -7,10 +7,11 @@ a) docker (and docker compose)
 
 1) Clone the project
 2) docker-compose build
-3) docker-compose up
+3) docker-compose up (starts the server and the polling process)
 from another terminal:
 4) docker-compose run website rails db:create
-5) docker-compose run website rails db:migrate && rails db:seed
+5) docker-compose run website rails db:migrate
+6) docker-compose run website rails db:seed
 
 Run the tests:
 
@@ -28,6 +29,6 @@ Call.rb -> has status (waiting, being_handled, done) and escalation (manager/dir
 
 Why Database and not a queue?
 
-Queue makes a lot of sense here. I felt the solution is somewhat cleaner by polling a db.
+Queue does make sense here. I felt the solution is somewhat cleaner by polling a db.
 
 
