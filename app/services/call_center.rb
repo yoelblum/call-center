@@ -1,6 +1,6 @@
 class CallCenter
 
-  #Runs over all waiting calls and handles them according to their escalation status
+  # Runs over all waiting calls and handles them according to their escalation status
   # nil escalation is handled by a free respondent (if no free respondent it waits to the next poll)
   # 'manager' escalation is handled by a free manager (if no free manager it waits to the next poll)
   # 'director'escalation is handled by a free director (likewise)
@@ -25,11 +25,13 @@ class CallCenter
       end
   end
 
+  #
+  # polls every second to see if there are waiting calls
   def self.poll_calls
     fork do
       while true
         self.handle_call
-        sleep(3)
+        sleep(1)
       end
     end
   end
