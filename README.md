@@ -22,9 +22,11 @@ if there is no free employee the call will wait until the right employee is free
 For the sake of this solution respondents and managers are able or not able to handle a call randomly.
 
 CallCenter.rb -> polls the calls table for waiting calls
-Employee.rb -> Base class. has functionality for querying free/unfree employees and handling calls. can either handle the call (and then
-the employee becomes busy) or escalate.
+
+Employee.rb -> Base class. has functionality for querying free/unfree employees and handling calls. can either handle the call (and then the employee becomes busy) or escalate.
+
 Manager.rb, Respondent.rb, Director.rb-> inherit employee. Only implement escalate (respondent escalates to manager, manager to director)
+
 Call.rb -> has status (waiting, being_handled, done) and escalation (manager/director).
 
 Why Database and not a queue?
